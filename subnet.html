@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US" prefix="og: https://ogp.me/ns#" prefix="og: http://ogp.me/ns#">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
+    <title> IP Subnet calculator </title>
+
+    <!-- Google Tag Manager for WordPress by gtm4wp.com -->
+    <script data-cfasync="false" data-pagespeed-no-defer type="text/javascript">//<![CDATA[
+        var gtm4wp_datalayer_name = "dataLayer";
+        var dataLayer = dataLayer || [];//]]>
+
+    </script>
+    <!-- End Google Tag Manager for WordPress by gtm4wp.com -->
+   
+    <script type="text/javascript">
+        window._wpemojiSettings = { "baseUrl": "https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/72x72\/", "ext": ".png", "svgUrl": "https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/svg\/", "svgExt": ".svg", "source": { "concatemoji": "https:\/\/www.iptp.net\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.9.5" } };
+        /*! This file is auto-generated */
+        !function (e, a, t) { var n, r, o, i = a.createElement("canvas"), p = i.getContext && i.getContext("2d"); function s(e, t) { var a = String.fromCharCode; p.clearRect(0, 0, i.width, i.height), p.fillText(a.apply(this, e), 0, 0); e = i.toDataURL(); return p.clearRect(0, 0, i.width, i.height), p.fillText(a.apply(this, t), 0, 0), e === i.toDataURL() } function c(e) { var t = a.createElement("script"); t.src = e, t.defer = t.type = "text/javascript", a.getElementsByTagName("head")[0].appendChild(t) } for (o = Array("flag", "emoji"), t.supports = { everything: !0, everythingExceptFlag: !0 }, r = 0; r < o.length; r++)t.supports[o[r]] = function (e) { if (!p || !p.fillText) return !1; switch (p.textBaseline = "top", p.font = "600 32px Arial", e) { case "flag": return s([127987, 65039, 8205, 9895, 65039], [127987, 65039, 8203, 9895, 65039]) ? !1 : !s([55356, 56826, 55356, 56819], [55356, 56826, 8203, 55356, 56819]) && !s([55356, 57332, 56128, 56423, 56128, 56418, 56128, 56421, 56128, 56430, 56128, 56423, 56128, 56447], [55356, 57332, 8203, 56128, 56423, 8203, 56128, 56418, 8203, 56128, 56421, 8203, 56128, 56430, 8203, 56128, 56423, 8203, 56128, 56447]); case "emoji": return !s([10084, 65039, 8205, 55357, 56613], [10084, 65039, 8203, 55357, 56613]) }return !1 }(o[r]), t.supports.everything = t.supports.everything && t.supports[o[r]], "flag" !== o[r] && (t.supports.everythingExceptFlag = t.supports.everythingExceptFlag && t.supports[o[r]]); t.supports.everythingExceptFlag = t.supports.everythingExceptFlag && !t.supports.flag, t.DOMReady = !1, t.readyCallback = function () { t.DOMReady = !0 }, t.supports.everything || (n = function () { t.readyCallback() }, a.addEventListener ? (a.addEventListener("DOMContentLoaded", n, !1), e.addEventListener("load", n, !1)) : (e.attachEvent("onload", n), a.attachEvent("onreadystatechange", function () { "complete" === a.readyState && t.readyCallback() })), (n = t.source || {}).concatemoji ? c(n.concatemoji) : n.wpemoji && n.twemoji && (c(n.twemoji), c(n.wpemoji))) }(window, document, window._wpemojiSettings);
+    </script>
+
+    <link rel='stylesheet' id='wcjp-frontend.css-css'
+        href='https://www.iptp.net/wp-content/plugins/custom-css-js-php/assets/css/wcjp-frontend.css?ver=5.9.5'
+        media='all' />
+    <link rel='stylesheet' id='mltlngg_stylesheet-css'
+        href='https://www.iptp.net/wp-content/plugins/multilanguage/css/style.css?ver=1.3.3' media='all' />
+    <link rel='stylesheet' id='posts-from-category-widget-stylesheet-css'
+        href='https://www.iptp.net/wp-content/plugins/posts-in-category-widget/style.css?ver=1.2.0' media='all' />
+    <link rel='stylesheet' id='cssnews-css'
+        href='https://www.iptp.net/wp-content/plugins/sp-news-and-widget/assets/css/stylenews.css?ver=4.1.4'
+        media='all' />
+    <link rel='stylesheet' id='widgets-on-pages-css'
+        href='https://www.iptp.net/wp-content/plugins/widgets-on-pages/public/css/widgets-on-pages-public.css?ver=1.4.0'
+        media='all' />
+    <link rel='stylesheet' id='intlTelInput.css-css'
+        href='https://www.iptp.net/wp-content/themes/iptp-theme/lib/intl-tel-input/css/intlTelInput.css?ver=5.9.5'
+        media='all' />
+    <link rel='stylesheet' id='swiper.min.css-css'
+        href='https://www.iptp.net/wp-content/themes/iptp-theme/lib/swiper/swiper-bundle.min.css?ver=5.9.5'
+        media='all' />
+    <link rel='stylesheet' id='css-style2-css'
+        href='https://www.iptp.net/wp-content/themes/iptp-theme/css/style.css?ver=1880326' media='all' />
+    <script type='text/javascript' id='jquery-core-js-extra'>
+        /* <![CDATA[ */
+        var benevolent_data = { "auto": "1", "loop": "1", "pager": "1", "animation": "slide", "speed": "7000", "a_speed": "600", "rtl": "", "is_localhost": "", "admin_ajax": "https:\/\/www.iptp.net\/en_US\/admin-ajax\/", "utils": "https:\/\/www.iptp.net\/wp-content\/themes\/iptp-theme\/lib\/intl-tel-input\/js\/utils.js", "post_id": "280", "link_op_rf_choose_page": "https:\/\/www.iptp.net\/en_US\/thank-you\/", "domain": "\/\/www.iptp.net" };
+/* ]]> */
+    </script>
+    <script src='https://www.iptp.net/wp-includes/js/jquery/jquery.min.js?ver=3.6.0' id='jquery-core-js'></script>
+    <script src='https://www.iptp.net/wp-content/plugins/sp-news-and-widget/assets/js/jquery.newstape.js?ver=4.1.4'
+        id='vnewsticker-js'></script>
+    <script src='https://www.iptp.net/wp-content/plugins/sp-news-and-widget/assets/js/sp-news-public.js?ver=4.1.4'
+        id='sp-news-public-js'></script>
+    <link rel="https://api.w.org/" href="https://www.iptp.net/en_US/wp-json/" />
+    <link rel="alternate" type="application/json" href="https://www.iptp.net/en_US/wp-json/wp/v2/pages/280" />
+    <link rel="alternate" type="application/json+oembed"
+        href="https://www.iptp.net/en_US/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.iptp.net%2Fen_US%2Fiptp-tools%2Fip-calculator%2F" />
+    <link rel="alternate" type="text/xml+oembed"
+        href="https://www.iptp.net/en_US/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.iptp.net%2Fen_US%2Fiptp-tools%2Fip-calculator%2F&#038;format=xml" />
+    <link rel="canonical" href="https://www.iptp.net/en_US/iptp-tools/ip-calculator/" />
+
+
+    <!-- Google Tag Manager for WordPress by gtm4wp.com -->
+    <script data-cfasync="false" data-pagespeed-no-defer type="text/javascript">//<![CDATA[
+        var dataLayer_content = { "pagePostType": "page", "pagePostType2": "single-page", "pagePostAuthor": "admin" };
+        dataLayer.push(dataLayer_content);//]]>
+    </script>
+    <script data-cfasync="false">//<![CDATA[
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    '//www.googletagmanager.com/gtm.' + 'js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-TFPQ38T');//]]>
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-129655414-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-129655414-1');
+    </script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+    <!-- My Style sheet -->
+    <link href="style.css" rel="stylesheet">
+
+</head>
+
+<body data-rsssl=1
+    class="page-template page-template-template-ipcalculator page-template-template-ipcalculator-php page page-id-280 
+    page-child parent-pageid-276 wp-custom-logo mltlngg-en_US group-blog full-width has-slider">
+    <div id="page" class="site">
+        <div>
+            <header class="entry-header d-flex align-items-center justify-content-center " >
+                <section>
+                    <h1>
+                        <span style="--i:1"> SUBNET</span>
+                        <span style="--i:2"> </span>
+                        <span style="--i:3"> </span>
+                        <span style="--i:4"> </span>
+                        <span style="--i:5"> CALCULATOR</span>
+                        <!--span style="--i:5"> U</span>
+                        <span style="--i:6"> B</span>
+                        <span style="--i:6"> N</span>
+                        <span style="--i:6"> E</span>
+                        <span style="--i:6"> T</span-->
+
+                    </h1>
+                </section>
+
+            </header>
+        </div>
+         <h6 style="text-align: center;"><img id="top" src="anya.gif"  ></h6>
+        <div class="container" style="display: flex; justify-content: center;">
+            <div id="content" class="site-content">
+                <div class="row">
+                    <div id="primary" class="content-area">
+                        <main id="main" class="site-main entry-content">
+                            <div class="d-flex align-items-center justify-content-center" style="margin-bottom: -1.2rem;;">
+                            
+                                <a class="frameIP4">IPv4</a></div>
+
+                            <script type="text/javascript">
+                                var ajax_url_load_v4 = "https://www.iptp.net/en_US/page-load-ajax-v4";         
+                            </script>
+
+                                 <div class="p-4 border border-3 rounded mb-5 ">
+                                        <form id="form-ip" method="post">
+                                            <div class="row gy-4">
+                                                <div class="col-12 col-md-6">
+                                                    <strong class="d-block mb-3">Network class</strong>
+                                                    <div class="d-flex">
+                                                        <div class="form-check pe-3">
+                                                            <input class="form-check-input" type="radio" value="a"
+                                                                checked name="cclass" id="classA">
+                                                            <label class="form-check-label" for="classA">
+                                                                A
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check pe-3">
+                                                            <input class="form-check-input" type="radio" value="b"
+                                                                name="cclass" id="classB">
+                                                            <label class="form-check-label" for="classB">
+                                                                B
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" value="c"
+                                                                name="cclass" id="classC">
+                                                            <label class="form-check-label" for="classC">
+                                                                C
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-md-6">
+                                                    <strong class="d-block mb-3">Subnet</strong>
+                                                    <div class="subnet-0 subnet-2">
+                                                        <select id="csubnet" class="form-select" name="csubnet2"
+                                                            onchange="">
+                                                            <option value="32">255.255.255.255 /32</option>
+                                                            <option value="31">255.255.255.254 /31</option>
+                                                            <option value="30">255.255.255.252 /30</option>
+                                                            <option value="29">255.255.255.248 /29</option>
+                                                            <option value="28">255.255.255.240 /28</option>
+                                                            <option value="27">255.255.255.224 /27</option>
+                                                            <option value="26">255.255.255.192 /26</option>
+                                                            <option value="25">255.255.255.128 /25</option>
+                                                            <option value="24">255.255.255.0 /24</option>
+                                                            <option value="23">255.255.254.0 /23</option>
+                                                            <option value="22">255.255.252.0 /22</option>
+                                                            <option value="21">255.255.248.0 /21</option>
+                                                            <option value="20">255.255.240.0 /20</option>
+                                                            <option value="19">255.255.224.0 /19</option>
+                                                            <option value="18">255.255.192.0 /18</option>
+                                                            <option value="17">255.255.128.0 /17</option>
+                                                            <option value="16">255.255.0.0 /16</option>
+                                                            <option value="15">255.254.0.0 /15</option>
+                                                            <option value="14">255.252.0.0 /14</option>
+                                                            <option value="13">255.248.0.0 /13</option>
+                                                            <option value="12">255.240.0.0 /12</option>
+                                                            <option value="11">255.224.0.0 /11</option>
+                                                            <option value="10">255.192.0.0 /10</option>
+                                                            <option value="9">255.128.0.0 /9</option>
+                                                            <option value="8">255.0.0.0 /8</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="subnet-0 subnet-3 d-none">
+                                                        <select id="csubnet" class="form-select" name="csubnet3"
+                                                            onchange="">
+                                                            <option value="32">255.255.255.255 /32</option>
+                                                            <option value="31">255.255.255.254 /31</option>
+                                                            <option value="30">255.255.255.252 /30</option>
+                                                            <option value="29">255.255.255.248 /29</option>
+                                                            <option value="28">255.255.255.240 /28</option>
+                                                            <option value="27">255.255.255.224 /27</option>
+                                                            <option value="26">255.255.255.192 /26</option>
+                                                            <option value="25">255.255.255.128 /25</option>
+                                                            <option value="24">255.255.255.0 /24</option>
+                                                            <option value="23">255.255.254.0 /23</option>
+                                                            <option value="22">255.255.252.0 /22</option>
+                                                            <option value="21">255.255.248.0 /21</option>
+                                                            <option value="20">255.255.240.0 /20</option>
+                                                            <option value="19">255.255.224.0 /19</option>
+                                                            <option value="18">255.255.192.0 /18</option>
+                                                            <option value="17">255.255.128.0 /17</option>
+                                                            <option value="16">255.255.0.0 /16</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="subnet-0 subnet-4 d-none">
+                                                        <select id="csubnet" class="form-select" name="csubnet4"
+                                                            onchange="">
+                                                            <option value="32">255.255.255.255 /32</option>
+                                                            <option value="31">255.255.255.254 /31</option>
+                                                            <option value="30">255.255.255.252 /30</option>
+                                                            <option value="29">255.255.255.248 /29</option>
+                                                            <option value="28">255.255.255.240 /28</option>
+                                                            <option value="27">255.255.255.224 /27</option>
+                                                            <option value="26">255.255.255.192 /26</option>
+                                                            <option value="25">255.255.255.128 /25</option>
+                                                            <option value="24">255.255.255.0 /24</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 mb-4" >
+                                                    <strong class="d-block mb-3">IP Address</strong>
+                                                    <input id="cip" class="form-control" name="cip" type="text"
+                                                        value="27.78.101.154" />
+                                                </div>
+                                            </div>
+                                            <div class="d-flex align-items-end justify-content-end">
+                                                <button class="btn" type="submit">Calculate</button>
+                                                <p id="p1">.</p>
+                                                <button class="btn" type="reset"> Reset</button>
+                                            </div>
+                                           <br>
+                                            
+                                        </form>
+                                    </div>
+                             <div class="kq-ip1 p-4 border border-3 rounded d-none table-responsive"></div>
+
+                                
+
+                            <script>
+                                jQuery(function ($) {
+                                    $('[name="cclass"]').change(function () {
+                                        $('.subnet-0').addClass('d-none');
+                                        // $('.subnet-2').removeClass('d-none');
+                                        var v = $(this).val();
+                                        switch (v) {
+                                            case "any":
+                                                $('.subnet-1').removeClass('d-none');
+                                                break;
+                                            case "a":
+                                                $('.subnet-2').removeClass('d-none');
+                                                break;
+                                            case "b":
+                                                $('.subnet-3').removeClass('d-none');
+                                                break;
+                                            case "c":
+                                                $('.subnet-4').removeClass('d-none');
+                                                break;
+                                        }
+                                    });
+                                    $('#form-ip').submit(function (e) {
+                                        e.preventDefault();
+                                        var $this = $(this);
+                                        var cclass = $(this).find('[name="cclass"]:checked').val();
+                                        var csubnet = "abc";
+                                        var cip = $(this).find('[name="cip"]').val();
+                                        switch (cclass) {
+                                            case 'any':
+                                                csubnet = $(this).find('[name="csubnet1"]').val();
+                                                break;
+                                            case "a":
+                                                csubnet = $(this).find('[name="csubnet2"]').val();
+                                                break;
+                                            case "b":
+                                                csubnet = $(this).find('[name="csubnet3"]').val();
+                                                break;
+                                            case "c":
+                                                csubnet = $(this).find('[name="csubnet4"]').val();
+                                                break;
+                                        }
+                                        $.ajax({
+                                            type: "post",
+                                            dataType: "json",
+                                            url: ajax_url_load_v4,
+
+                                            //  url :  "https://www.calculator.net/ip-subnet-calculator.html?" + str + "&x=54&y=24"  ,
+                                            data: {
+                                                action: "ipv4",
+                                                //   data1:str,
+                                                cclass: cclass,
+                                                csubnet: csubnet,
+                                                cip: cip,
+                                            },
+                                            context: this,
+                                            beforeSend: function () {
+                                                //  be_load_tphi();
+                                                $('.ajax_loading').removeClass('loading_ajax_symbol');
+                                            },
+                                            success: function (response) {
+
+                                                if (response) {
+
+
+                                                    if (response.data) {
+                                                        $('.ajax_loading').addClass('loading_ajax_symbol');
+                                                        $('.kq-ip1').removeClass('d-none');
+                                                        $('.kq-ip1').html(response.data);
+                                                    } else {
+                                                    }
+
+                                                    // else responsve
+                                                } else {
+
+                                                }
+                                            },
+                                            error: function (jqXHR, textStatus, errorThrown) {
+
+                                            }
+                                        })
+                                    });
+                                    // console.log(ajax_object.ajax_url);
+                                    $('#form-ip2').submit(function (e) {
+                                        e.preventDefault();
+                                        var $this = $(this);
+                                        var str = $(this).serialize();
+                                        // alert( str );
+                                        var c6subnet = $(this).find('[name="c6subnet"]').val();
+                                        var c6ip = $(this).find('[name="c6ip"]').val();
+                                        //  return ;
+                                        $.ajax({
+                                            type: "post",
+                                            dataType: "json",
+                                            url: ajax_url_load_v6,
+                                            //  url :  "https://www.calculator.net/ip-subnet-calculator.html?" + str + "&x=54&y=24"  ,
+                                            data: {
+                                                action: "ipv6",
+                                                //   data1:str,
+                                                c6subnet: c6subnet,
+                                                c6ip: c6ip,
+                                            },
+                                            context: this,
+                                            beforeSend: function () {
+                                                //  be_load_tphi();
+                                                $('.ajax_loading2').removeClass('loading_ajax_symbol2');
+                                            },
+                                            success: function (response) {
+
+                                                if (response) {
+
+                                                    if (response.data) {
+                                                        $('.ajax_loading2').addClass('loading_ajax_symbol2');
+                                                        $('.kq-ip2').removeClass('d-none');
+                                                        $('.kq-ip2').html(response.data);
+                                                    } else {
+                                                    }
+
+                                                    // else responsve
+                                                } else {
+
+                                                }
+                                            },
+                                            error: function (jqXHR, textStatus, errorThrown) {
+
+                                            }
+                                        })
+                                    });
+                                });
+                            </script>
+
+    </div><!-- #page -->
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TFPQ38T" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+   
+        <link rel='stylesheet' id='benevolent-font-css'
+            href='https://www.iptp.net/wp-content/themes/iptp-theme/css/fonts.css?ver=5.9.5' media='all' />
+
+</body>
+
+</html>

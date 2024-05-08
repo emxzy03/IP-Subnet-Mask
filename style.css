@@ -1,0 +1,68 @@
+header {
+    width: auto;
+    height: 70px;
+    background-color: rgb(26, 17, 22);
+    margin-top: 50px;
+}
+
+.frameIP4 {
+    width: 150px;
+    height: 40px;
+    background-color: rgb(26, 17, 22);
+    color: rgb(255, 255, 255);
+    font-size: larger;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.border {
+    border-color: rgb(179, 75, 147);
+}
+
+.btn {
+    color: white;
+    background-color: rgb(26, 17, 22);
+}
+
+h1 {
+    font-size: 50px;
+}
+
+h1 span {
+    color: rgba(225, 225, 225, 0);
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+    animation: loading 3s infinite linear;
+    animation-delay: calc(0.9s*var(--l));
+}
+
+@keyframes loading {
+
+    0%,
+    100% {
+        color: rgba(225, 225, 225, 0);
+        text-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+    }
+
+    50% {
+        color: rgba(225, 225, 225, 0.9);
+        text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+    }
+}
+
+#p1{
+    width: 5px;
+    height: 5px;
+    font-size: 0px;
+    
+}
+#top{
+    width: 300px;
+    height: 150px;
+    text-align: center;
+  
+    
+}
+
+
